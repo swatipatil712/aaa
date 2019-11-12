@@ -1,0 +1,21 @@
+<h1>Employee Works</h1>
+
+<h1>{{title}}</h1>
+<h3>
+    <li>full name: {{getFullName}}</li>
+</h3>
+
+<table border="2">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Salary</th>
+    </tr>
+    <tr *ngFor="let e of employees">  
+        <td>{{e.id}}</td>
+        <td>{{e.name |uppercase}}</td>
+        <td>{{e.gender}}</td>
+        <td>{{e.salary | currency}}</td>
+    </tr>
+</table>

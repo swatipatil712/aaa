@@ -1,0 +1,31 @@
+<h3>{{title}}</h3>
+{{studentModel.value | json}}
+<form [formGroup]="studentModel">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Name">Name</label>
+                    <input type="text" name="Name" class="form-control" formControlName="Name">
+                </div>
+                <div class="alert alert-danger" *ngIf="studentModel.controls['Name'].hasError('required')">
+                    Name is required
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="text" name="Email" class="form-control" formControlName="Email">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" (click)="saveStudent(studentModel.value)">Save</button>
+        </div>
+
+    </div>
+</form>
